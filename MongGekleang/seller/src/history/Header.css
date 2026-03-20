@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 12px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ── LEFT: profile ── */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.picture img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.name-profile{
+    display: flex;
+    flex-direction: column;
+    gap:0px;
+    line-height: 1.2;
+}
+.name-profile h6 {
+    font-size: 12px;
+    color: #888888;
+    font-weight: 400;
+    margin-bottom:0;
+}
+
+.name-profile h4 {
+    font-size: 16px;
+    color: #1a1a1a;
+    font-weight: 700;
+    margin-top: 0;
+}
+
+/* ── RIGHT: section ── */
+.right-section {
+    display: flex;
+    align-items: center;  /* ← keeps buy and bell on same line */
+    gap: 6px;
+}
+
+.buy-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4caf50;
+}
+
+.right-section svg {
+    width: 20px;
+    height: 20px;
+    fill: #1a1a1a;
+    display: block;
+}
