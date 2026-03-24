@@ -1,0 +1,84 @@
+.sign_in {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+    padding: 2rem 1rem;
+}
+
+.sign_in_content {
+    width: 100%;
+    max-width: 400px;
+}
+
+.sign_in h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    padding: 1rem;
+}
+
+.sign_in form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 1.5rem;
+    padding-bottom: 4rem;
+}
+
+.form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+}
+
+.form_group label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.form_group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #e8e8e8;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+}
+
+.form_group input:focus {
+    outline: none;
+    background-color: #ddd;
+}
+
+.sign_in_link {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.sign_in_link span {
+    color: #666;
+}
+
+.sign_in_link a {
+    color: #007d32;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.sign_in_link a:hover {
+    text-decoration: underline;
+}
+
+.form_group input::placeholder {
+    color: #999;
+}
