@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { BrowserRouter,Route, Routes } from 'react-router-dom'
 import './App.css'
-import Main_sell from './sell/Main_sell'
-import Main_history from './history/Main_history'
+import Main_sell from './pages/Main_sell'
+import Main_history from './pages/Main_history'
 import Home from './pages/home'
 import Sign_up from './pages/sign_up'
 import Main from './pages/main_buying_page'
@@ -15,13 +15,12 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/sell" element={<Main_sell />} />
+        <Route path="/Main_sell" element={<Main_sell />} />
         <Route path="/history" element={<Main_history />} />
         <Route path="/Sign_up" element={<Sign_up />} />
         <Route path="/main_buying_page" element={<Main />} />
         <Route path="/sign_in" element={<Sign_in />} />
-
-        
+        <Route path="/Main_history" element={<Main_history/>}/>      
       </Routes>
     </BrowserRouter>
   )
