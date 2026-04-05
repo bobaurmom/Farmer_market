@@ -7,7 +7,8 @@ import Home from './pages/home'
 import Sign_up from './pages/sign_up'
 import Main from './pages/main_buying_page'
 import Sign_in from './pages/sign_in'
-import IndividualCategoryPage from './pages/Individual_Cate';
+import IndividualCategoryPage from './pages/Individual_Cate'
+import IndividualItem from './pages/Individual_Item'
 
 const AllCategoriesPage = () => {
   return (
@@ -32,7 +33,8 @@ function App() {
         <Route path="/main_buying_page" element={<Main />} />
         <Route path="/sign_in" element={<Sign_in />} />
         <Route path="/Main_history" element={<Main_history/>}/>   
-        <Route path="/categories" element={<AllCategoriesPage />} />   
+        <Route path="/categories" element={<AllCategoriesPage />} />
+        <Route path="/product/:id" element={<IndividualItem />} />
       </Routes>
     </BrowserRouter>
   )

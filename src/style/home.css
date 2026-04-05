@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Battambang:wght@400;700&display=swap');
+
 .home {
     background-image: url('../../public/bg.svg');
     background-size: cover;
@@ -8,6 +10,7 @@
     justify-content: center;
     height: 100vh;
     text-align: center;
+    font-family: 'Inter', 'Battambang', sans-serif;
 
 }
 .home h1 {
@@ -26,4 +29,8 @@
   margin-top: 2rem;
   height: 3.5rem;
   border-radius: 10px;
+}
+
+.logo-container{
+  
 }
