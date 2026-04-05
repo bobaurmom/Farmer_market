@@ -8,6 +8,7 @@ import Sign_up from './pages/sign_up'
 import Main from './pages/main_buying_page'
 import Sign_in from './pages/sign_in'
 import IndividualCategoryPage from './pages/Individual_Cate';
+import Main_favourite from './pages/Main_favourite'
 
 const AllCategoriesPage = () => {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/sign_in" element={<Sign_in />} />
         <Route path="/Main_history" element={<Main_history/>}/>   
         <Route path="/categories" element={<AllCategoriesPage />} />   
+        <Route path="/Main_favourite" element={<Main_favourite/>}/>
       </Routes>
     </BrowserRouter>
   )

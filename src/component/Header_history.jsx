@@ -1,5 +1,5 @@
 import profileImg from '../assets/profile.jpg'
-import '../style/Header.css'
+import '../style/Header_history.css'
 function Header(){
     return(
         <>
