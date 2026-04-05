@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /* Header */
   .header {
     display: flex;
@@ -67,3 +68,242 @@
     font-size: 20px;
     cursor: pointer;
   }
+=======
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  padding: 0;
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  box-sizing: border-box;
+}
+
+/* Header Left - Profile Section */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f0f0f0;
+}
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hello {
+  font-size: 14px;
+  color: #666;
+  font-weight: 400;
+}
+
+.profile-name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Header Right - Icons and Text */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.khmer-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #27ae60;
+  min-width: 50px;
+}
+
+.notification-icon {
+  width: 28px;
+  height: 28px;
+  fill: #1a1a1a;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.notification-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Small Mobile (320px - 374px) */
+@media (max-width: 374px) {
+  .header-inner {
+    padding: 10px 12px;
+  }
+
+  .profile-section {
+    gap: 8px;
+  }
+
+  .profile-image {
+    width: 44px;
+    height: 44px;
+    border-width: 1px;
+  }
+
+  .hello {
+    font-size: 11px;
+  }
+
+  .profile-name {
+    font-size: 14px;
+  }
+
+  .header-right {
+    gap: 10px;
+  }
+
+  .khmer-text {
+    font-size: 12px;
+    min-width: auto;
+    display: none;
+  }
+
+  .notification-icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Mobile (375px - 480px) */
+@media (min-width: 375px) and (max-width: 480px) {
+  .header-inner {
+    padding: 12px 16px;
+  }
+
+  .profile-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .greeting {
+    gap: 0;
+  }
+
+  .hello {
+    font-size: 12px;
+  }
+
+  .profile-name {
+    font-size: 15px;
+  }
+
+  .khmer-text {
+    font-size: 13px;
+    min-width: auto;
+  }
+
+  .notification-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Tablet (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .header-inner {
+    padding: 14px 20px;
+  }
+
+  .profile-section {
+    gap: 14px;
+  }
+
+  .profile-image {
+    width: 56px;
+    height: 56px;
+  }
+
+  .hello {
+    font-size: 13px;
+  }
+
+  .profile-name {
+    font-size: 17px;
+  }
+
+  .header-right {
+    gap: 18px;
+  }
+
+  .khmer-text {
+    font-size: 15px;
+  }
+
+  .notification-icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* Desktop (769px+) */
+@media (min-width: 769px) {
+  .header-inner {
+    padding: 16px 24px;
+  }
+
+  .profile-section {
+    gap: 16px;
+  }
+
+  .profile-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .hello {
+    font-size: 14px;
+  }
+
+  .profile-name {
+    font-size: 18px;
+  }
+
+  .header-right {
+    gap: 20px;
+  }
+
+  .khmer-text {
+    font-size: 16px;
+    min-width: 50px;
+  }
+
+  .notification-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+>>>>>>> Stashed changes
