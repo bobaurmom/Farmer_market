@@ -2,6 +2,7 @@ import Footer from '../component/Footer'
 import Header from '../component/Header'
 import Body from '../component/Middle_Category'
 
+function Main() {
     return (
         <div>
             <Header/>
@@ -10,5 +11,5 @@ import Body from '../component/Middle_Category'
         </div>
     );
 
-
+}
 export default Main;
