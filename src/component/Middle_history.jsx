@@ -12,21 +12,21 @@ function Middle_history() {
     const DEFAULT_POSTS = [
     {
         type: "Rice",
-        price: "0.50$",
+        price: "11000",
         location: "Kandal",
         phonenumber: "012 738 805",
         image: getProductImage("Rice")
     },
     {
         type: "Corn",
-        price: "0.30$",
+        price: "5000",
         location: "Kandal",
         phonenumber: "012 738 805",
         image: getProductImage("Corn")
     },
     {
         type: "Tomato",
-        price: "0.40$",
+        price: "2000",
         location: "Kandal",
         phonenumber: "012 738 805",
         image: getProductImage("Tomato")
@@ -84,7 +84,7 @@ function Middle_history() {
     return (
         <div className="history-container">
             <div className='main-header'>
-                <h2>Post History</h2>
+                <h2>ប្រវិត្តផ្សព្វផ្សាយ</h2>
                 <svg onClick={() => navigate('/Main_sell')} style={{ cursor: 'pointer' }} fill="#008000" width="30px" height="30px" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
                     <path d="M856 40H142q-42 0-72 30t-30 72v714q0 42 30 72t72 30h714q42 0 72-30t30-72V142q0-42-30-72t-72-30zM754 550H550v204H448V550H244V448h204V244h102v204h204v102z"/>
                 </svg>
@@ -131,7 +131,7 @@ function Middle_history() {
                                             <span className="card-phone">{post.phonenumber}</span>
                                         </div>
                                         <div className="card-row">
-                                            <span className="card-price">{post.price}/kg</span>
+                                            <span className="card-price">{post.price}៛/kg</span>
                                             <span className="card-location">{post.location}</span>
                                         </div>
                                     </div>
