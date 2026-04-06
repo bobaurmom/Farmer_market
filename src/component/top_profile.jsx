@@ -7,13 +7,15 @@ function Top_profile () {
         <div className="top_profile">
             <div className='left'>
                 <img src={pf} alt="Profile" className="profile_pic" />
-                <h2>ឈ្មោះអ្នកប្រើប្រាស់</h2>
+                <div className="profile-text">
+                    <p className="greeting">Hello</p>
+                    <h2 className="username">John Doe</h2>
+                </div>
             </div>
             <div className='right'>
-                <button>លក់ទំនិញ</button>
-                <button><FaBell /></button>
+                <button className="sell-btn">sell</button>
+                <button className="bell-btn"><FaBell /></button>
             </div>
-
         </div>
     )
 }

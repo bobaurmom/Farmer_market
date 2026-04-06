@@ -12,7 +12,7 @@ import Main_favourite from './pages/Main_favourite'
 
 const AllCategoriesPage = () => {
   return (
-    <div style={{ padding: '20px', textAlign: 'center' }}>
+    <div style={{ padding: "20px", textAlign: "center" }}>
       <h2>All Categories</h2>
       <button onClick={() => window.history.back()}>← Back</button>
     </div>
@@ -20,13 +20,11 @@ const AllCategoriesPage = () => {
 };
 
 function App() {
-  
-
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-         <Route path="/category/:categoryName" element={<IndividualCategoryPage />} />
+        <Route path="/category/:categoryName" element={<IndividualCategoryPage />}/>
         <Route path="/Main_sell" element={<Main_sell />} />
         <Route path="/history" element={<Main_history />} />
         <Route path="/Sign_up" element={<Sign_up />} />
@@ -37,7 +35,7 @@ function App() {
         <Route path="/Main_favourite" element={<Main_favourite/>}/>
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
 export default App;

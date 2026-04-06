@@ -30,7 +30,7 @@ function Sign_in () {
                 </form>
                 <Button onClick={() => window.location.href = '/main_buying_page'} disabled={false}>ចូលប្រើប្រាស់</Button>
                 <div className="sign_in_link">
-                    <a href="/forgot_password">ភ្លេចពាក្យសម្ងាត់?</a>
+                    <a href="/forget_pass">ភ្លេចពាក្យសម្ងាត់?</a>
                 </div>
                 <div className="sign_in_link">
                     <span>មិនទាន់មានគណនី?</span>

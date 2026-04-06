@@ -2,7 +2,7 @@ import Footer from '../component/Footer'
 import Header from '../component/Header'
 import Body from '../component/Middle_Individual_Category'
 
-function Main () {
+function Categories () {
     return (
         <div>
             <Header/>
@@ -11,4 +11,4 @@ function Main () {
         </div>
     )
 }
-export default Main;
+export default Categories;

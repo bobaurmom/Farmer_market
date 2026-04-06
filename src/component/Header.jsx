@@ -1,6 +1,14 @@
 import '../style/Header.css';
+import profile from '../assets/profile.jpg';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+  const navigate = useNavigate();
+
+  const handleProfileClick = () => {
+    navigate('/profile');
+  };
+
   return (
     <div className="header">
       <div className="icons-group">
