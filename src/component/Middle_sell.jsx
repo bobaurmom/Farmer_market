@@ -16,7 +16,7 @@ function Middle_sell() {
     });
 
     function handleChange(e) {
-        const { name, value } = e.target;
+        const { name, value } = e.target; // same as const name = e.target.name , const value = e.target.value
 
         //  auto-update image when user types product type
         if (name === "type") {

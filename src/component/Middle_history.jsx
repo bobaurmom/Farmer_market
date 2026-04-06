@@ -6,8 +6,8 @@ import { getProductImage } from '../lib/productImages'
 function Middle_history() {
     const navigate = useNavigate();
     const [posts, setPosts] = useState([]);
-    const [editIndex, setEditIndex] = useState(null);
-    const [editData, setEditData] = useState({});
+    const [editIndex, setEditIndex] = useState(null); // know where index that we need index
+    const [editData, setEditData] = useState({}); 
     // for default value
     const DEFAULT_POSTS = [
     {
@@ -165,3 +165,4 @@ function Middle_history() {
 }
 
 export default Middle_history;
+
