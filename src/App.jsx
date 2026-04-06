@@ -11,6 +11,7 @@ import IndividualItem from "./pages/Individual_Item";
 import DashboardTab from "./pages/DashboardTab";
 import AnalyticsTab from "./pages/AnalyticsTab";
 import ProfileTab from "./pages/ProfileTab";
+import Forget_pass from "./pages/Forget_pass";
 
 const AllCategoriesPage = () => {
   return (
@@ -32,6 +33,8 @@ function App() {
         <Route path="/Sign_up" element={<Sign_up />} />
         <Route path="/main_buying_page" element={<Main />} />
         <Route path="/sign_in" element={<Sign_in />} />
+        <Route path="/forgotpassword" element={<Forget_pass/>} />
+        <Route path="/forget_pass" element={<Forget_pass/>} />
         <Route path="/Main_history" element={<Main_history />} />
         <Route path="/categories" element={<AllCategoriesPage />} />
         <Route path="/product/:id" element={<IndividualItem />} />
