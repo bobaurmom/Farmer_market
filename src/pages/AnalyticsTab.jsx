@@ -1,25 +1,26 @@
+// src/pages/AnalyticsTab.jsx
 const TOP_PRODUCTS = [
-  { name: 'Rice',      count: 320 },
-  { name: 'Beef',      count: 210 },
+  { name: 'Rice', count: 320 },
+  { name: 'Beef', count: 210 },
   { name: 'Vegetable', count: 185 },
-  { name: 'Fish',      count: 150 },
-  { name: 'Fruit',     count: 120 },
+  { name: 'Fish', count: 150 },
+  { name: 'Fruit', count: 120 },
 ]
 
 const PROVINCE_SALES = [
-  { name: 'Kandal',       count: 280 },
-  { name: 'Phnom Penh',   count: 240 },
-  { name: 'Siem Reap',    count: 190 },
-  { name: 'Battambang',   count: 160 },
+  { name: 'Kandal', count: 280 },
+  { name: 'Phnom Penh', count: 240 },
+  { name: 'Siem Reap', count: 190 },
+  { name: 'Battambang', count: 160 },
   { name: 'Kampong Cham', count: 130 },
 ]
 
 const AVG_PRICES = [
-  { name: 'Rice',      price: 45  },
-  { name: 'Beef',      price: 120 },
-  { name: 'Vegetable', price: 20  },
-  { name: 'Fish',      price: 75  },
-  { name: 'Fruit',     price: 35  },
+  { name: 'Rice', price: 45 },
+  { name: 'Beef', price: 120 },
+  { name: 'Vegetable', price: 20 },
+  { name: 'Fish', price: 75 },
+  { name: 'Fruit', price: 35 },
 ]
 
 function BarChart({ data, valueKey, color = '#1a4d2e' }) {
