@@ -65,6 +65,9 @@ export default function AgriApp() {
           <div className="section">
             <div className="section-header">
               <span className="section-title">ផលិតផល</span>
+              <button className="see-all" onClick={() => navigate('/categories')}>
+                មើលទាំងអស់
+              </button>
             </div>
             <div className="category-grid">
               {categories.map((c, i) => (
