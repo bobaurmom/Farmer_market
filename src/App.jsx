@@ -14,9 +14,8 @@ import AnalyticsTab from "./pages/AnalyticsTab";
 import ProfileTab from "./pages/ProfileTab";
 import Forget_pass from "./pages/Forget_pass";
 import AdminTab from "./pages/AdminTab";
-import Navbar from "./component/Navbar";
-import ProfileCard from "./component/ProfileCard";  // ← ADD THIS
-import QuickInfo from "./component/QuickInfo";      // ← ADD THIS
+import ProfileCard from "./component/ProfileCard";
+import QuickInfo from "./component/QuickInfo";
 
 const AllCategoriesPage = () => {
   return (
@@ -28,14 +27,23 @@ const AllCategoriesPage = () => {
 };
 
 // Layout for pages that need the sidebar (ProfileCard + QuickInfo + Tabs)
+// ADMIN ONLY - must have admin role
 const DashboardLayout = () => {
+  // Check if user is admin
+  const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+  
+  // Redirect to home if not admin
+  if (currentUser.role !== 'admin') {
+    window.location.href = '/main_buying_page';
+    return null;
+  }
+  
   // This state is for the tabs inside the dashboard
   // This is ONLY for the dashboard/analytics/profile/admin views
   const [activeTab, setActiveTab] = useState("profile");
 
   return (
     <>
-      <Navbar />
       <div className="page">
         <aside className="left-panel">
           <ProfileCard />
@@ -80,11 +88,10 @@ const DashboardLayout = () => {
   );
 };
 
-// Simple layout for other pages (just navbar, no sidebar)
+// Simple layout for other pages (no navbar)
 const SimpleLayout = ({ children }) => {
   return (
     <>
-      <Navbar />
       {children}
     </>
   );

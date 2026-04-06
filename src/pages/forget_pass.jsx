@@ -3,6 +3,7 @@ import '../style/forget_pass.css';
 import Button from '../component/button';
 
 function Forget_pass () {
+    // track which step of the form we're on
     const [step, setStep] = useState(1); 
     const [email, setEmail] = useState("");
     const [code, setCode] = useState("");
@@ -26,7 +27,7 @@ function Forget_pass () {
             setError("Please enter the verification code");
             return;
         }
-        //we dont have backend so we will just check if code is "123456"
+        // fake verification since no backend
         if (code === "123456") {
             setError("");
             setStep(3);
@@ -49,12 +50,12 @@ function Forget_pass () {
             setError("Password must be at least 6 characters");
             return;
         }
-        // Password reset successful
         setError("");
         alert("Password reset successfully!");
         window.location.href = "/sign_in";
     };
 
+    // three different forms depending on the step
     return (
         <div className="forget_pass">
             <div className="forget_pass_content">
@@ -84,6 +85,7 @@ function Forget_pass () {
 
                 {step === 2 && (
                     <>
+                        {/* verify the code user got */}
                         <h1>ផ្ទៀងផ្ទាត់លេខកូដ</h1>
                         <p className="step_description">We sent a verification code to {email}</p>
                         <form onSubmit={handleVerifyCode}>
@@ -115,6 +117,7 @@ function Forget_pass () {
 
                 {step === 3 && (
                     <>
+                        {/* final step: enter new password */}
                         <h1>កំណត់ពាក្យសម្ងាត់ថ្មី</h1>
                         <form onSubmit={handleResetPassword}>
                             <div className="form_group">

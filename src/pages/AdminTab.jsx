@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import '../style/AdminTab.css'
 
 const INITIAL_USERS = [
   { id: 1, name: 'Aegon Targaryen', email: 'aegon@gmail.com', role: 'Farmer', status: 'active',   joined: 'Jan 10, 2024',
@@ -43,8 +44,19 @@ export default function AdminTab() {
     }
   }
 
+  const handleLogout = () => {
+    if (confirm('Are you sure you want to logout?')) {
+      localStorage.removeItem('currentUser')
+      window.location.href = '/sign_in'
+    }
+  }
+
   return (
     <div className="admin-page">
+      <div className="admin-header">
+        <h2>Admin Dashboard</h2>
+        <button className="btn-logout" onClick={handleLogout}>Logout</button>
+      </div>
       <div className="section-card">
         <h3>Account Management</h3>
         <table>
@@ -57,12 +69,12 @@ export default function AdminTab() {
           <tbody>
             {users.map(u => (
               <tr key={u.id}>
-                <td>{u.name}</td>
-                <td>{u.email}</td>
-                <td>{u.role}</td>
-                <td><span className={`badge ${u.status}`}>{u.status.charAt(0).toUpperCase() + u.status.slice(1)}</span></td>
-                <td>{u.joined}</td>
-                <td>
+                <td data-label="Name">{u.name}</td>
+                <td data-label="Email">{u.email}</td>
+                <td data-label="Role">{u.role}</td>
+                <td data-label="Status"><span className={`badge ${u.status}`}>{u.status.charAt(0).toUpperCase() + u.status.slice(1)}</span></td>
+                <td data-label="Joined">{u.joined}</td>
+                <td data-label="Actions">
                   <button className="btn-view"   onClick={() => setSelected(u)}>View History</button>
                   <button className="btn-delete" onClick={() => deleteUser(u.id)}>Delete</button>
                 </td>
@@ -84,8 +96,8 @@ export default function AdminTab() {
               <tbody>
                 {selected.history.map((h, i) => (
                   <tr key={i}>
-                    <td>{h.action}</td>
-                    <td>{h.date}</td>
+                    <td data-label="Action">{h.action}</td>
+                    <td data-label="Date">{h.date}</td>
                   </tr>
                 ))}
               </tbody>

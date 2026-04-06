@@ -43,12 +43,12 @@ export default function DashboardTab() {
           <tbody>
             {RECENT_ORDERS.map(o => (
               <tr key={o.id}>
-                <td>{o.id}</td>
-                <td>{o.farmer}</td>
-                <td>{o.product}</td>
-                <td>{o.date}</td>
-                <td>{o.amount}</td>
-                <td><span className={`badge ${o.status}`}>{o.status.charAt(0).toUpperCase() + o.status.slice(1)}</span></td>
+                <td data-label="Order ID">{o.id}</td>
+                <td data-label="Farmer">{o.farmer}</td>
+                <td data-label="Product">{o.product}</td>
+                <td data-label="Date">{o.date}</td>
+                <td data-label="Amount">{o.amount}</td>
+                <td data-label="Status"><span className={`badge ${o.status}`}>{o.status.charAt(0).toUpperCase() + o.status.slice(1)}</span></td>
               </tr>
             ))}
           </tbody>
