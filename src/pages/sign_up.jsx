@@ -121,7 +121,7 @@ function Sign_up() {
 
                 <div className="sign_in_link">
                     <span>មានគណនីរួចហើយ? </span>
-                    <a href="/sign_in">ចូលប្រើប្រាស់</a>
+                    <a href="/sign-in">ចូលប្រើប្រាស់</a>
                 </div>
             </div>
         </div>
