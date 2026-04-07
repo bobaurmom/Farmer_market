@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useState } from "react";
 import "./App.css";
 import Main_sell from "./pages/Main_sell";
 import Main_history from "./pages/Main_history";
@@ -12,6 +13,9 @@ import DashboardTab from "./pages/DashboardTab";
 import AnalyticsTab from "./pages/AnalyticsTab";
 import ProfileTab from "./pages/ProfileTab";
 import Forget_pass from "./pages/Forget_pass";
+import AdminTab from "./pages/AdminTab";
+import ProfileCard from "./component/ProfileCard";
+import QuickInfo from "./component/QuickInfo";
 
 const AllCategoriesPage = () => {
   return (
@@ -22,26 +26,156 @@ const AllCategoriesPage = () => {
   );
 };
 
+// Layout for pages that need the sidebar (ProfileCard + QuickInfo + Tabs)
+// ADMIN ONLY - must have admin role
+const DashboardLayout = () => {
+  // Check if user is admin
+  const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+  
+  // Redirect to home if not admin
+  if (currentUser.role !== 'admin') {
+    window.location.href = '/main_buying_page';
+    return null;
+  }
+  
+  // This state is for the tabs inside the dashboard
+  // This is ONLY for the dashboard/analytics/profile/admin views
+  const [activeTab, setActiveTab] = useState("profile");
+
+  return (
+    <>
+      <div className="page">
+        <aside className="left-panel">
+          <ProfileCard />
+          <QuickInfo />
+        </aside>
+
+        <main className="right-panel">
+          <div className="tabs">
+            <button
+              className={`tab-btn ${activeTab === "profile" ? "active" : ""}`}
+              onClick={() => setActiveTab("profile")}
+            >
+              Profile
+            </button>
+            <button
+              className={`tab-btn ${activeTab === "analytics" ? "active" : ""}`}
+              onClick={() => setActiveTab("analytics")}
+            >
+              Analytics
+            </button>
+            <button
+              className={`tab-btn ${activeTab === "dashboard" ? "active" : ""}`}
+              onClick={() => setActiveTab("dashboard")}
+            >
+              Dashboard
+            </button>
+            <button
+              className={`tab-btn ${activeTab === "admin" ? "active" : ""}`}
+              onClick={() => setActiveTab("admin")}
+            >
+              Admin
+            </button>
+          </div>
+
+          {activeTab === "profile" && <ProfileTab />}
+          {activeTab === "analytics" && <AnalyticsTab />}
+          {activeTab === "dashboard" && <DashboardTab />}
+          {activeTab === "admin" && <AdminTab />}
+        </main>
+      </div>
+    </>
+  );
+};
+
+// Simple layout for other pages (no navbar)
+const SimpleLayout = ({ children }) => {
+  return (
+    <>
+      {children}
+    </>
+  );
+};  
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Public routes - no navbar needed */}
         <Route path="/" element={<Home />} />
-        <Route path="/category/:categoryName" element={<IndividualCategoryPage />}/>
-        <Route path="/Main_sell" element={<Main_sell />} />
-        <Route path="/history" element={<Main_history />} />
         <Route path="/Sign_up" element={<Sign_up />} />
-        <Route path="/main_buying_page" element={<Main />} />
         <Route path="/sign_in" element={<Sign_in />} />
-        <Route path="/forgotpassword" element={<Forget_pass/>} />
-        <Route path="/forget_pass" element={<Forget_pass/>} />
-        <Route path="/Main_history" element={<Main_history />} />
-        <Route path="/categories" element={<AllCategoriesPage />} />
-        <Route path="/product/:id" element={<IndividualItem />} />
-        <Route path="/dashboard" element={<DashboardTab />} />
-        <Route path="/analytics" element={<AnalyticsTab />} />
-        <Route path="/profile" element={<ProfileTab />} />
+        <Route path="/forgotpassword" element={<Forget_pass />} />
+        <Route path="/forget_pass" element={<Forget_pass />} />
 
+        {/* Routes with simple layout (navbar only) */}
+        <Route
+          path="/category/:categoryName"
+          element={
+            <SimpleLayout>
+              <IndividualCategoryPage />
+            </SimpleLayout>
+          }
+        />
+
+        <Route
+          path="/Main_sell"
+          element={
+            <SimpleLayout>
+              <Main_sell />
+            </SimpleLayout>
+          }
+        />
+
+        <Route
+          path="/history"
+          element={
+            <SimpleLayout>
+              <Main_history />
+            </SimpleLayout>
+          }
+        />
+
+        <Route
+          path="/Main_history"
+          element={
+            <SimpleLayout>
+              <Main_history />
+            </SimpleLayout>
+          }
+        />
+
+        <Route
+          path="/main_buying_page"
+          element={
+            <SimpleLayout>
+              <Main />
+            </SimpleLayout>
+          }
+        />
+
+        <Route
+          path="/categories"
+          element={
+            <SimpleLayout>
+              <AllCategoriesPage />
+            </SimpleLayout>
+          }
+        />
+
+        <Route
+          path="/product/:id"
+          element={
+            <SimpleLayout>
+              <IndividualItem />
+            </SimpleLayout>
+          }
+        />
+
+        {/* Dashboard routes - with sidebar and tabs */}
+        <Route path="/dashboard" element={<DashboardLayout />} />
+        <Route path="/analytics" element={<DashboardLayout />} />
+        <Route path="/profile" element={<DashboardLayout />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,3 +1,4 @@
+/* center page stuff */
 .sign_in {
     display: flex;
     flex-direction: column;
@@ -8,11 +9,13 @@
     padding: 2rem 1rem;
 }
 
+/* don't let it get too wide */
 .sign_in_content {
     width: 100%;
     max-width: 400px;
 }
 
+/* huge heading */
 .sign_in h1 {
     font-size: 3rem;
     font-weight: 700;
@@ -21,6 +24,7 @@
     padding: 1rem;
 }
 
+/* vertical spacing for form */
 .sign_in form {
     display: flex;
     flex-direction: column;
@@ -30,6 +34,7 @@
     padding-bottom: 4rem;
 }
 
+/* group labels with inputs */
 .form_group {
     display: flex;
     flex-direction: column;
@@ -37,12 +42,14 @@
     align-items: flex-start;
 }
 
+/* labels are bold */
 .form_group label {
     font-size: 1rem;
     font-weight: 600;
     color: #333;
 }
 
+/* gray boxes for inputs */
 .form_group input {
     width: 100%;
     padding: 0.75rem 1rem;
@@ -53,21 +60,25 @@
     transition: background-color 0.2s;
 }
 
+/* highlight when clicked */
 .form_group input:focus {
     outline: none;
     background-color: #ddd;
 }
 
+/* footer link container */
 .sign_in_link {
     text-align: center;
     margin-top: 1.5rem;
     font-size: 0.95rem;
 }
 
+/* muted text */
 .sign_in_link span {
     color: #666;
 }
 
+/* green links that click */
 .sign_in_link a {
     color: #007d32;
     text-decoration: none;
@@ -75,10 +86,12 @@
     cursor: pointer;
 }
 
+/* underline hover effect */
 .sign_in_link a:hover {
     text-decoration: underline;
 }
 
+/* placeholder is lighter */
 .form_group input::placeholder {
     color: #999;
 }

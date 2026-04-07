@@ -1,0 +1,470 @@
+.admin-page {
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.admin-header h2 {
+  margin: 0;
+  font-size: 28px;
+  color: #333;
+  flex: 1;
+}
+
+.btn-logout {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-logout:hover {
+  background-color: #c0392b;
+}
+
+/* Section Card */
+.section-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.section-card h3 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 20px;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+thead {
+  background-color: #f5f5f5;
+  border-bottom: 2px solid #ddd;
+}
+
+th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  color: #555;
+  font-size: 14px;
+}
+
+tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge.active {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.badge.inactive {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.badge.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+/* Action Buttons */
+.btn-view,
+.btn-delete {
+  padding: 6px 12px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-view {
+  background-color: #27ae60;
+  color: white;
+}
+
+.btn-view:hover {
+  background-color: #229954;
+}
+
+.btn-delete {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #c0392b;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal {
+  background: white;
+  border-radius: 8px;
+  padding: 30px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal h2 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 22px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+  color: #333;
+}
+
+.modal table {
+  margin-top: 20px;
+  min-width: 100%;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablet: 768px and below */
+@media (max-width: 768px) {
+  .admin-page {
+    padding: 15px;
+  }
+
+  .admin-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .admin-header h2 {
+    font-size: 22px;
+    flex-basis: 100%;
+  }
+
+  .btn-logout {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .section-card {
+    padding: 15px;
+  }
+
+  .section-card h3 {
+    font-size: 18px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  /* Hide less important columns */
+  th:nth-child(2),
+  td:nth-child(2),
+  th:nth-child(3),
+  td:nth-child(3) {
+    display: none;
+  }
+
+  .btn-view,
+  .btn-delete {
+    padding: 5px 10px;
+    font-size: 11px;
+    margin-right: 3px;
+  }
+
+  .modal {
+    padding: 20px;
+  }
+
+  .modal h2 {
+    font-size: 18px;
+  }
+
+  .modal table {
+    font-size: 13px;
+  }
+
+  .modal th,
+  .modal td {
+    padding: 8px;
+  }
+}
+
+/* Mobile: 480px and below */
+@media (max-width: 480px) {
+  .admin-page {
+    padding: 10px;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .admin-header h2 {
+    font-size: 18px;
+    flex-basis: auto;
+    margin: 0;
+  }
+
+  .btn-logout {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .section-card {
+    padding: 12px;
+    border-radius: 6px;
+  }
+
+  .section-card h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  /* Convert table to card layout */
+  table {
+    min-width: unset;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody {
+    display: block;
+  }
+
+  tbody tr {
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    background: white;
+  }
+
+  tbody tr:hover {
+    background-color: white;
+  }
+
+  td {
+    display: block;
+    text-align: left;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+  }
+
+  td:last-child {
+    border-bottom: none;
+  }
+
+  td:before {
+    content: attr(data-label);
+    display: block;
+    font-weight: 700;
+    color: #27ae60;
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+
+  .badge {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+
+  .btn-view,
+  .btn-delete {
+    display: inline-block;
+    padding: 6px 10px;
+    margin: 2px 2px 2px 0;
+    font-size: 11px;
+  }
+
+  /* Mobile Modal */
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .modal {
+    padding: 15px;
+    border-radius: 6px;
+  }
+
+  .modal h2 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .modal table {
+    min-width: unset;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+  }
+
+  .modal thead {
+    display: none;
+  }
+
+  .modal tbody tr {
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+
+  .modal tbody td {
+    display: block;
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-size: 12px;
+  }
+
+  .modal tbody td:last-child {
+    border-bottom: none;
+  }
+
+  .modal tbody td:before {
+    content: attr(data-label);
+    display: block;
+    font-weight: 700;
+    color: #27ae60;
+    margin-bottom: 4px;
+    font-size: 11px;
+  }
+
+  .modal-close {
+    font-size: 20px;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* Extra small devices: 360px and below */
+@media (max-width: 360px) {
+  .admin-page {
+    padding: 8px;
+  }
+
+  .admin-header h2 {
+    font-size: 16px;
+  }
+
+  .btn-logout {
+    padding: 8px;
+    font-size: 11px;
+  }
+
+  .section-card {
+    padding: 10px;
+  }
+
+  .section-card h3 {
+    font-size: 14px;
+  }
+
+  td {
+    padding: 8px;
+  }
+
+  td:before {
+    font-size: 11px;
+  }
+
+  .btn-view,
+  .btn-delete {
+    padding: 5px 8px;
+    font-size: 10px;
+    margin: 1px;
+  }
+
+  .modal {
+    padding: 12px;
+  }
+
+  .modal h2 {
+    font-size: 14px;
+  }
+}
