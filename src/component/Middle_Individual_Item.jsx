@@ -45,11 +45,11 @@ export default function IndividualItem() {
             <div className='User-info'>
               <div className='item-info-temp'>
                 Seller Info
-                <span style={{fontSize: "20px"}}>+855 85424269</span>
+                <span style={{fontSize: "20px"}}>{state.phone}</span>
               </div>
               <div className='item-info-temp'>
                 Location
-                <span style={{fontSize: "20px"}}>Phnom Penh</span>
+                <span style={{fontSize: "20px"}}>{state.location}</span>
               </div>
             </div>
             <div className='liked-btn'>

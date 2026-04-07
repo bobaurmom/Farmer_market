@@ -6,7 +6,7 @@ function Header() {
   const navigate = useNavigate();
 
   const handleProfileClick = () => {
-    navigate('/profile');
+    navigate('../pages/ProfileTab.jsx');
   };
 
   const handleSellClick = () => {
