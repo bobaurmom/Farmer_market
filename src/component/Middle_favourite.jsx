@@ -5,22 +5,22 @@ import { getProductImage } from '../lib/productImages'
 function Middle_favourite() {
     const Default_fav = [
         {
-            type: "Rice",
-            price: "0.50$",
+            type: "អង្ករ",
+            price: "11000",
             location: "Kandal",
             phonenumber: "012 738 805",
             image: getProductImage("Rice")
         },
         {
-            type: "Corn",
-            price: "0.30$",
+            type: "ពោត",
+            price: "5000",
             location: "Kandal",
             phonenumber: "012 738 805",
             image: getProductImage("Corn")
         },
         {
-            type: "Tomato",
-            price: "0.40$",
+            type: "ប៉េងប៉ោះ",
+            price: "៣០០០",
             location: "Kandal",
             phonenumber: "012 738 805",
             image: getProductImage("Tomato")
@@ -39,7 +39,7 @@ function Middle_favourite() {
     return (
         <div className="fav-container">
             <div className='fav-header'>
-                <h2>Favourite</h2>
+                <h2>ចំណង់ចំណូលចិត្ត</h2>
             </div>
 
             {posts.length === 0 ? (
@@ -57,7 +57,7 @@ function Middle_favourite() {
                                     <span className="card-phone">{post.phonenumber}</span>
                                 </div>
                                 <div className="card-row">
-                                    <span className="card-price">{post.price}/kg</span>
+                                    <span className="card-price">{post.price}៛/kg</span>
                                     <span className="card-location">{post.location}</span>
                                 </div>
                             </div>
