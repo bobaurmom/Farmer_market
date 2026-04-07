@@ -1,18 +1,16 @@
 
 import Header from '../component/Header_history'
-import Middle_history from '../component/Middle_history'
+import Middle_favourite from '../component/Middle_favourite'
 import Footer from '../component/Footer'
-function Main_history() {
+function Main_favourite() {
 
   return (
     <>
       <Header/>
-      <Middle_history/>
+      <Middle_favourite/>
       <Footer/>
     </>
   )
 }
 
-export default Main_history
-
-
+export default Main_favourite

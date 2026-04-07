@@ -1,7 +1,38 @@
 /* In Sell.jsx */
 /* Outer container centers everything */
+@import url('https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Noto+Sans+Khmer:wght@100..900&display=swap');
+.battambang-thin {
+  font-family: "Battambang", system-ui;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.battambang-light {
+  font-family: "Battambang", system-ui;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.battambang-regular {
+  font-family: "Battambang", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.battambang-bold {
+  font-family: "Battambang", system-ui;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.battambang-black {
+  font-family: "Battambang", system-ui;
+  font-weight: 900;
+  font-style: normal;
+}
 
 .sell-container {
+  font-family: "Battambang", system-ui;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,6 +43,7 @@
 
 /* Inner box wraps h2 + form */
 .sell-box {
+  font-family: "Battambang", system-ui;  
   display: flex;
   flex-direction: column; /* stack vertically */   
   width: 100%;
@@ -25,6 +57,7 @@
 
 /* Center the title */
 .sell-box h2 {
+  font-family: "Battambang", system-ui;
   text-align: center;
   color: green;          /* dark gray color */
   font-size: 24px;      /* size of the title */
@@ -34,6 +67,8 @@
 
 /* Form styling */
 .sell-form {
+    font-family: "Battambang", system-ui;
+
     display: flex;
     flex-direction: column;
     gap:20px;
@@ -63,6 +98,7 @@
 }
 /* Make each row a flex row */
 .form-row {
+  font-family: "Battambang", system-ui;
   display: flex;
   flex-direction: column;
   align-items: left;       /* vertically center input with label */
@@ -70,6 +106,8 @@
 
 /* Optional: make labels fixed width */
 .form-row label {
+  font-family: "Battambang", system-ui;
+
   font-weight: bold;
   font-size: 14px;
   text-align: left;
@@ -89,6 +127,8 @@
 }
 
 .sell-form input {
+    font-family: "Battambang", system-ui;
+
     padding: 10px;
     border: 1px solid #ccc;
     background-color: #fff;
@@ -99,6 +139,10 @@
 }
 .sell-form input::placeholder {
     color: #888;
+}
+button{
+    font-family: "Battambang", system-ui;
+
 }
 /* Responsive for small screens */
 @media (max-width: 600px) {

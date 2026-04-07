@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Noto+Sans+Khmer:wght@100..900&display=swap');
+.battambang-thin {
+  font-family: "Battambang", system-ui;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.battambang-light {
+  font-family: "Battambang", system-ui;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.battambang-regular {
+  font-family: "Battambang", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.battambang-bold {
+  font-family: "Battambang", system-ui;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.battambang-black {
+  font-family: "Battambang", system-ui;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.fav-container {
+    font-family: "Battambang", system-ui;
+    padding: 16px;
+}
+
+.fav-header {
+    font-family: "Battambang", system-ui;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.fav-header h2{
+    font-family: "Battambang", system-ui;
+    color: #008000;
+    font-size: 22px;
+    margin: 0;
+
+}
+.fav-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.fav-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+}
+
+.fav-card .card-image img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.fav-card .card-info {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.fav-card .card-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.fav-card .card-type {
+    font-weight: bold;
+    color: #333;
+}
+
+.fav-card .card-price {
+    color: #008000;
+    font-weight: bold;
+}
+
+.fav-card .card-phone {
+    color: #555;
+}
+
+.fav-card .card-location {
+    color: #555;
+}
+
+.fav-card .card-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px 0;
+    border-top: 1px solid #f0f0f0;
+}

@@ -1,18 +1,49 @@
 import '../style/Middle_history.css'
 import { useEffect, useState } from 'react'
-import riceImg from '../assets/rice.png' 
 import { useNavigate } from 'react-router-dom'
+import { getProductImage } from '../lib/productImages'
 
 function Middle_history() {
     const navigate = useNavigate();
     const [posts, setPosts] = useState([]);
-    const [editIndex, setEditIndex] = useState(null);
-    const [editData, setEditData] = useState({});
+    const [editIndex, setEditIndex] = useState(null); // know where index that we need index
+    const [editData, setEditData] = useState({}); 
+    // for default value
+    const DEFAULT_POSTS = [
+    {
+        type: "ស្ពៃ",
+        price: "11000",
+        location: "កណ្តាល",
+        phonenumber: "០១២​ ៧៣៨​ ៨០៥​",
+        image: getProductImage("ស្ពៃ")
+    },
+    {
+        type: "ពោត",
+        price: "5000",
+        location: "កណ្តាល",
+        phonenumber: "០១២ ៧៣៨ ៨០៥",
+        image: getProductImage("ពោត")
+    },
+    {
+        type: "សណ្តែក",
+        price: "2000",
+        location: "Kandal",
+        phonenumber: "012 738 805",
+        image: getProductImage("longbean")
+    },
+];
 
-    // page lodes  
     useEffect(() => {
-        const savedPosts = JSON.parse(localStorage.getItem("posts") || "[]");
+    const savedPosts = JSON.parse(localStorage.getItem("posts") || "[]");
+
+    if (savedPosts.length === 0) {
+        // No data yet → save defaults into localStorage
+        setPosts(DEFAULT_POSTS);
+        localStorage.setItem("posts", JSON.stringify(DEFAULT_POSTS));
+    } else {
+        // Already has data → use it
         setPosts(savedPosts);
+    }
     }, []);
 
     function handleDelete(index) {
@@ -21,7 +52,6 @@ function Middle_history() {
         localStorage.setItem("posts", JSON.stringify(updatedPosts));
     }
 
-    //  handleEditClick
     function handleEditClick(index) {
         setEditIndex(index);
         setEditData({ ...posts[index] });
@@ -29,8 +59,14 @@ function Middle_history() {
 
     function handleEditChange(e) {
         const { name, value } = e.target;
-        setEditData({ ...editData, [name]: value });
-    }
+        
+        // ← when user edits type, auto-update image too
+        if (name === "type") {
+            setEditData({ ...editData, [name]: value, image: getProductImage(value) });
+        } else {
+            setEditData({ ...editData, [name]: value });
+        }
+}
 
     function handleEditSave() {
         const updatedPosts = posts.map((post, i) =>
@@ -48,7 +84,7 @@ function Middle_history() {
     return (
         <div className="history-container">
             <div className='main-header'>
-                <h2>Post History</h2>
+                <h2>ប្រវិត្តផ្សព្វផ្សាយ</h2>
                 <svg onClick={() => navigate('/Main_sell')} style={{ cursor: 'pointer' }} fill="#008000" width="30px" height="30px" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
                     <path d="M856 40H142q-42 0-72 30t-30 72v714q0 42 30 72t72 30h714q42 0 72-30t30-72V142q0-42-30-72t-72-30zM754 550H550v204H448V550H244V448h204V244h102v204h204v102z"/>
                 </svg>
@@ -60,8 +96,6 @@ function Middle_history() {
                 ) : (
                     posts.map((post, index) => (
                         <div key={index}>
-
-                            {/*  Show edit form if this card is being edited */}
                             {editIndex === index ? (
                                 <div className="edit-card">
                                     <div className="form-row">
@@ -86,10 +120,10 @@ function Middle_history() {
                                     </div>
                                 </div>
                             ) : (
-                                /* Normal card view */
                                 <div className="history-card">
                                     <div className="card-image">
-                                        <img src={post.image || riceImg} alt="product" />
+                                        {/* ← only change is here, removed riceImg fallback */}
+                                        <img src={post.image} alt="product" />
                                     </div>
                                     <div className="card-info">
                                         <div className="card-row">
@@ -97,13 +131,12 @@ function Middle_history() {
                                             <span className="card-phone">{post.phonenumber}</span>
                                         </div>
                                         <div className="card-row">
-                                            <span className="card-price">{post.price}/kg</span>
+                                            <span className="card-price">{post.price}៛/kg</span>
                                             <span className="card-location">{post.location}</span>
                                         </div>
                                     </div>
-                                    
+
                                     <div className="card-actions">
-                                        {/* Edit icon */}
                                         <svg
                                             onClick={() => handleEditClick(index)}
                                             style={{ cursor: 'pointer' }}
@@ -113,7 +146,6 @@ function Middle_history() {
                                             <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" stroke="#008000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                         </svg>
 
-                                        {/* Delete icon */}
                                         <svg
                                             onClick={() => handleDelete(index)}
                                             style={{ cursor: 'pointer' }}
@@ -133,3 +165,4 @@ function Middle_history() {
 }
 
 export default Middle_history;
+
