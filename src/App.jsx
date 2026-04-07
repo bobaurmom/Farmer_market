@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import Main_sell from "./pages/Main_sell";
 import Main_history from "./pages/Main_history";
+import Main_favourite from "./pages/Main_favourite";
 import Home from "./pages/home";
 import Sign_up from "./pages/sign_up";
 import Main from "./pages/main_buying_page";
@@ -106,7 +107,7 @@ function App() {
         <Route path="/Sign_up" element={<Sign_up />} />
         <Route path="/sign_in" element={<Sign_in />} />
         <Route path="/forgotpassword" element={<Forget_pass />} />
-        <Route path="/forget_pass" element={<Forget_pass />} />
+\        <Route path="/forgot-password" element={<Forget_pass />} />
 
         {/* Routes with simple layout (navbar only) */}
         <Route
@@ -141,6 +142,15 @@ function App() {
           element={
             <SimpleLayout>
               <Main_history />
+            </SimpleLayout>
+          }
+        />
+
+        <Route
+          path="/favourite"
+          element={
+            <SimpleLayout>
+              <Main_favourite />
             </SimpleLayout>
           }
         />

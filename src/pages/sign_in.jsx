@@ -83,11 +83,11 @@ function Sign_in() {
                 {error && <div className="error_message" style={{color: 'red', marginBottom: '10px'}}>{error}</div>}
                 <Button onClick={handleSubmit} disabled={false}>ចូលប្រើប្រាស់</Button>
                 <div className="sign_in_link">
-                    <a href="/forget_pass">ភ្លេចពាក្យសម្ងាត់?</a>
+                    <a href="/forgot-password">ភ្លេចពាក្យសម្ងាត់?</a>
                 </div>
                 <div className="sign_in_link">
                     <span>មិនទាន់មានគណនី?</span>
-                    <a href="/sign_up">ចុះឈ្មោះ</a>
+                    <a href="/sign-up">ចុះឈ្មោះ</a>
                 </div>
                 <div className="sign_in_link" style={{marginTop: '15px', fontSize: '12px', color: '#999'}}>
                     <span>Admin: admin@123.com / admin123</span>

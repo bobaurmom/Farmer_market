@@ -47,7 +47,7 @@ export default function AdminTab() {
   const handleLogout = () => {
     if (confirm('Are you sure you want to logout?')) {
       localStorage.removeItem('currentUser')
-      window.location.href = '/sign_in'
+      window.location.href = '/sign-in'
     }
   }
 

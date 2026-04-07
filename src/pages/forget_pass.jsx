@@ -52,7 +52,8 @@ function Forget_pass () {
         }
         setError("");
         alert("Password reset successfully!");
-        window.location.href = "/sign_in";
+        window.location.href = "/sign-in";
+
     };
 
     // three different forms depending on the step
@@ -78,7 +79,7 @@ function Forget_pass () {
                         {error && <div className="error_message">{error}</div>}
                         <Button onClick={handleSendCode} disabled={false}>ផ្ញើលេខកូដ</Button>
                         <div className="forget_pass_link">
-                            <a href="/sign_in">ត្រលប់ទៅ ចូលប្រើប្រាស់</a>
+                            <a href="/sign-in">ត្រលប់ទៅ ចូលប្រើប្រាស់</a>
                         </div>
                     </>
                 )}
@@ -146,7 +147,7 @@ function Forget_pass () {
                         {error && <div className="error_message">{error}</div>}
                         <Button onClick={handleResetPassword} disabled={false}>កំណត់ពាក្យសម្ងាត់</Button>
                         <div className="forget_pass_link">
-                            <a href="/sign_in">ត្រលប់ទៅ ចូលប្រើប្រាស់</a>
+                            <a href="/sign-in">ត្រលប់ទៅ ចូលប្រើប្រាស់</a>
                         </div>
                     </>
                 )}

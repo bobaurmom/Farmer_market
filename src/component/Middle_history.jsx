@@ -85,7 +85,7 @@ function Middle_history() {
         <div className="history-container">
             <div className='main-header'>
                 <h2>ប្រវិត្តផ្សព្វផ្សាយ</h2>
-                <svg onClick={() => navigate('/Main_sell')} style={{ cursor: 'pointer' }} fill="#008000" width="30px" height="30px" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+                <svg onClick={() => navigate('/sell')} style={{ cursor: 'pointer' }} fill="#008000" width="30px" height="30px" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
                     <path d="M856 40H142q-42 0-72 30t-30 72v714q0 42 30 72t72 30h714q42 0 72-30t30-72V142q0-42-30-72t-72-30zM754 550H550v204H448V550H244V448h204V244h102v204h204v102z"/>
                 </svg>
             </div>
