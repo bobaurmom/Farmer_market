@@ -37,11 +37,11 @@ function Middle_history() {
     const savedPosts = JSON.parse(localStorage.getItem("posts") || "[]");
 
     if (savedPosts.length === 0) {
-        // No data yet → save defaults into localStorage
+        // No data yet save defaults into localStorage
         setPosts(DEFAULT_POSTS);
         localStorage.setItem("posts", JSON.stringify(DEFAULT_POSTS));
     } else {
-        // Already has data → use it
+        // Already has data  use it
         setPosts(savedPosts);
     }
     }, []);
@@ -60,7 +60,7 @@ function Middle_history() {
     function handleEditChange(e) {
         const { name, value } = e.target;
         
-        // ← when user edits type, auto-update image too
+        //  when user edits type, auto-update image too
         if (name === "type") {
             setEditData({ ...editData, [name]: value, image: getProductImage(value) });
         } else {
