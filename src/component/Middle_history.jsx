@@ -11,25 +11,25 @@ function Middle_history() {
     // for default value
     const DEFAULT_POSTS = [
     {
-        type: "Rice",
+        type: "ស្ពៃ",
         price: "11000",
-        location: "Kandal",
-        phonenumber: "012 738 805",
-        image: getProductImage("Rice")
+        location: "កណ្តាល",
+        phonenumber: "០១២​ ៧៣៨​ ៨០៥​",
+        image: getProductImage("ស្ពៃ")
     },
     {
-        type: "Corn",
+        type: "ពោត",
         price: "5000",
-        location: "Kandal",
-        phonenumber: "012 738 805",
-        image: getProductImage("Corn")
+        location: "កណ្តាល",
+        phonenumber: "០១២ ៧៣៨ ៨០៥",
+        image: getProductImage("ពោត")
     },
     {
-        type: "Tomato",
+        type: "សណ្តែក",
         price: "2000",
         location: "Kandal",
         phonenumber: "012 738 805",
-        image: getProductImage("Tomato")
+        image: getProductImage("longbean")
     },
 ];
 
